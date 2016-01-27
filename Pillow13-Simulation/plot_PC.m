@@ -164,11 +164,13 @@ end
              hold on;
              subplot(number_pcs-1,number_pcs-1,(number_pcs-1)*(p1-1)+p2-1);
              hold on; 
-             scatter(pccoord{cellind}(:,p1 ),pccoord{cellind}(:,p2),cind(cellind),'x');
-             
+             x = pccoord{cellind}(:,p1 );
+             y = pccoord{cellind}(:,p2);
+             scatter(x,y,cind(cellind),'x');
              xlabel(sprintf('PC %d',p1)); ylabel(sprintf('PC %d',p2));
              set(gca,'fontsize',14);
              if over == true
+                text(x,y, num2str(deltacell{cellind}));
                 T = [T,'\color{',colors{cellind},'}',num2str(cellInds(cellind,1)),',',num2str(cellInds(cellind,2)), ' '];
                 
              else
@@ -200,18 +202,18 @@ end
 %  end
 
 %Plot overlapping spikes in PC space vs. delta overlap
-if over == true
-    figure;
-     p1 = 1; p2 = 2; p3 = 3;
-     T = '\fontsize{16} {';
-     for cellind = 1:length(pccoord)
-         hold on; 
-         scatter3(pccoord{cellind}(:,p1 ),pccoord{cellind}(:,p2),deltacell{cellind},cind(cellind),'x');
-         xlabel(sprintf('PC %d',p1)); ylabel(sprintf('PC %d',p2)); zlabel(sprintf('spike delta'));
-         set(gca,'fontsize',14);
-         grid on; view(45,30);
-       
-         T = [T,'\color{',colors{cellind},'}',num2str(cellInds(cellind,1)),',',num2str(cellInds(cellind,2)), ' '];
-         title(strcat(T,' }'));
-     end
-end
+% if over == true
+%     figure;
+%      p1 = 1; p2 = 2; p3 = 3;
+%      T = '\fontsize{16} {';
+%      for cellind = 1:length(pccoord)
+%          hold on; 
+%          scatter3(pccoord{cellind}(:,p1 ),pccoord{cellind}(:,p2),deltacell{cellind},cind(cellind),'x');
+%          xlabel(sprintf('PC %d',p1)); ylabel(sprintf('PC %d',p2)); zlabel(sprintf('spike delta'));
+%          set(gca,'fontsize',14);
+%          grid on; view(45,30);
+%        
+%          T = [T,'\color{',colors{cellind},'}',num2str(cellInds(cellind,1)),',',num2str(cellInds(cellind,2)), ' '];
+%          title(strcat(T,' }'));
+%      end
+% end
