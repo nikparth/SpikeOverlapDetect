@@ -64,14 +64,14 @@ end
 
 
         
-    
+spikeLen = 30;
     
 % For each spike event, capture raw electrode data for 15 bins before and
 % 14 bins after (total 30 bins) on all six electrodes.
 for gi = 1:length(Xall)-1;
     sp1temp = [];
     for elecind = 1:nElec
-        sp1temp = [sp1temp; Y(Xall(gi)-15:Xall(gi)+14,elecind)];
+        sp1temp = [sp1temp; Y(Xall(gi)-spikeLen/2:Xall(gi)+spikeLen/2-1,elecind)];
     end
     sp1(:,gi) = sp1temp;
 end;
@@ -105,7 +105,7 @@ if over == true
         for gi = 1:length(Xg)-1;        
             sp2temp = [];
             for elecind = 1:nElec
-                sp2temp = [sp2temp; Y(Xg(gi)-15:Xg(gi)+14,elecind)];
+                sp2temp = [sp2temp; Y(Xg(gi)-spikeLen/2:Xg(gi)+spikeLen/2-1,elecind)];
             end
             sp2(:,gi) = sp2temp;
         end
@@ -135,7 +135,7 @@ else
         for gi = 1:length(Xg)-1;        
             sp2temp = [];
             for elecind = 1:nElec
-                sp2temp = [sp2temp; Y(Xg(gi)-15:Xg(gi)+14,elecind)];
+                sp2temp = [sp2temp; Y(Xg(gi)-spikeLen/2:Xg(gi)+spikeLen/2-1,elecind)];
             end
             sp2(:,gi) = sp2temp;
         end
