@@ -1,4 +1,4 @@
-function pccoord = plot_PC(X,Y,number_pcs)
+function pccoord = plot_PC1(X,Y,number_pcs)
 %               
 %           pccoord = plot_PC(X,Y,number_pcs)
 % 

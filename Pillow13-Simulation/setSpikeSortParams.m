@@ -1,14 +1,14 @@
 % PATH SETTING
-addpath sort-tools/
+addpath('C:\Users\nikpa_000\SkyDrive\Documents\Stanford\Grad\Research\SpikeSort\src\SpikeOverlapDetect\Pillow13-Simulation\sort-tools');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PARAMS GOVERNING THE RECORDING DATA (sdat = DAT STRUCT)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % CHANGE THESE FOR YOUR DATASET
-sdat.ne = 2; % number of electrodes
-sdat.ncell = 2; % number of neurons
-sdat.nsecs = 60;  % number of total seconds in the recording
+sdat.ne = num_el; % number of electrodes
+sdat.ncell = num_neur; % number of neurons
+sdat.nsecs = 11;  % number of total seconds in the recording
 sdat.samprate = 20e3; % sample rate
 sdat.nsamps = sdat.nsecs*sdat.samprate;  % number of total samples
 

@@ -8,9 +8,9 @@ setSpikeSortParams;  % (LOOK HERE FOR DETAILS).
 % Set parameters governing the simulated spike trains
 nwt = 30;  % # time samples in spike waveforms
 sprate = 100; % mean spike rate (unrealistically high to observe lots of simultaneous spks)
-nsesig = .1; % marginal stdv of additive noise (arbitrary units)
+nsesig = .01; % marginal stdv of additive noise (arbitrary units)
 
-
+rng(seed);
 %% 2.  Generate spike trains % ----------------------
 Xsp = double(sparse((rand(sdat.nsamps,sdat.ncell) < sprate/sdat.samprate))); % each column is spk train
 

@@ -64,7 +64,7 @@ end
 
 
         
-spikeLen = 30;
+spikeLen = 60;
     
 % For each spike event, capture raw electrode data for 15 bins before and
 % 14 bins after (total 30 bins) on all six electrodes.
